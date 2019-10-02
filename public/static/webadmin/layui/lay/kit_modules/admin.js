@@ -14,7 +14,7 @@ layui.define(mods, function (e) {
             shade: !0,
             direction: "left",
             dynamicRender: !0,
-            url: "views/table/teble2.html",
+            url: "xykwebadmin.php/app",
             width: "50%"
         }), a("#cc").on("click", function () {
             layui.sidebar.render({
@@ -22,7 +22,7 @@ layui.define(mods, function (e) {
                 title: "这是表单盒子",
                 shade: !0,
                 dynamicRender: !0,
-                url: "views/form/index.html",
+                url: "xykwebadmin.php/formindex",
                 width: "50%"
             })
         }), m.on("nav(header_right)", function (e) {
@@ -32,8 +32,17 @@ layui.define(mods, function (e) {
                 title: "设置",
                 shade: !0,
                 dynamicRender: !0,
-                url: "views/setting.html"
-            }), "help" === t && l.alert("QQ群：248049395，616153456")
+                url: "xykwebadmin.php/setting"
+            })
+             /*   , "menu" === t && layui.sidebar.render({
+                elem: e.elem,
+                title: "菜单管理",
+                shade: !0,
+                url: "menu",
+                direction: "left",
+                dynamicRender: !0,
+                width: "100%"
+            })*/
         }), layui.mockjs.inject(APIs), "SPA" === i.loadType && n.render(), "function" == typeof e && e()
     };
     var u = {
@@ -41,122 +50,90 @@ layui.define(mods, function (e) {
             var t = this, a = {
                 r: [{
                     path: "/user/index",
-                    component: "/views/user/index.html",
+                    component: "views/user/index",
                     name: "用户列表",
                     children: [{
                         path: "/user/create",
-                        component: "views/user/create.html",
+                        component: "views/user/create",
                         name: "新增用户"
-                    }, {path: "/user/edit", component: "views/user/edit.html", name: "编辑用户"}]
+                    }, {path: "/user/edit", component: "views/user/edit", name: "编辑用户"}]
                 }],
                 routes: [{
-                    path: "/layui/fly",
+                    path: "/xyk/fly",
                     component: "https://fly.layui.com/",
                     name: "Fly",
                     iframe: !0
-                }, {path: "/layui", component: "http://www.layui.com/", name: "Layui", iframe: !0}, {
+                }, {path: "/xyk", component: "http://www.layui.com/", name: "Layui", iframe: !0}, {
                     path: "/baidu",
                     component: "https://www.baidu.com/",
                     name: "百度一下",
                     iframe: !0
-                }, {path: "/user/index", component: "/views/user/index.html", name: "用户列表"}, {
+                }, {path: "/user/index", component: "/views/user/index", name: "用户列表"}, {
                     path: "/user/create",
-                    component: "views/user/create.html",
+                    component: "views/user/create",
                     name: "新增用户"
-                }, {path: "/user/edit", component: "views/user/edit.html", name: "编辑用户"}, {
+                }, {path: "/user/edit", component: "views/user/edit", name: "编辑用户"}, {
                     path: "/cascader",
-                    component: "views/cascader/index.html",
-                    name: "Cascader"
-                }, {path: "/", component: "views/app.html", name: "主页"}, {
-                    path: "/user/my",
-                    component: "views/profile.html",
-                    name: "用户中心"
-                }, {
-                    path: "/inputnumber",
-                    component: "views/inputnumber.html",
-                    name: "InputNumber"
-                }, {path: "/layui/grid", component: "http://generaladmin.juhuiny.com", name: "Grid"}, {
-                    path: "/layui/button",
-                    component: "views/layui/button.html",
-                    name: "按钮"
-                }, {path: "/layui/form", component: "views/layui/form.html", name: "表单"}, {
-                    path: "/layui/nav",
-                    component: "views/layui/nav.html",
-                    name: "导航/面包屑"
-                }, {path: "/layui/tab", component: "views/layui/tab.html", name: "选项卡"}, {
-                    path: "/layui/progress",
-                    component: "views/layui/progress.html",
-                    name: "progress"
-                }, {path: "/layui/panel", component: "views/layui/panel.html", name: "panel"}, {
-                    path: "/layui/badge",
-                    component: "views/layui/badge.html",
-                    name: "badge"
-                }, {
-                    path: "/layui/timeline",
-                    component: "views/layui/timeline.html",
-                    name: "timeline"
-                }, {
-                    path: "/layui/table-element",
-                    component: "views/layui/table-element.html",
-                    name: "table-element"
-                }, {path: "/layui/anim", component: "views/layui/anim.html", name: "anim"}, {
-                    path: "/layui/layer",
-                    component: "views/layui/layer.html",
-                    name: "layer"
-                }, {
-                    path: "/layui/laydate",
-                    component: "views/layui/laydate.html",
-                    name: "laydate"
-                }, {path: "/layui/table", component: "views/layui/table.html", name: "table"}, {
-                    path: "/layui/laypage",
-                    component: "views/layui/laypage.html",
-                    name: "laypage"
-                }, {
-                    path: "/layui/upload",
-                    component: "views/layui/upload.html",
-                    name: "upload"
-                }, {
-                    path: "/layui/carousel",
-                    component: "views/layui/carousel.html",
-                    name: "carousel"
-                }, {path: "/layui/laytpl", component: "views/layui/laytpl.html", name: "laytpl"}, {
-                    path: "/layui/flow",
-                    component: "views/layui/flow.html",
-                    name: "flow"
-                }, {path: "/layui/util", component: "views/layui/util.html", name: "util"}, {
-                    path: "/layui/code",
-                    component: "views/layui/code.html",
-                    name: "code"
-                }, {path: "/user/table", component: "/views/table/teble.html", name: "Table"}, {
-                    path: "/user/table2",
-                    component: "/views/table/teble2.html",
-                    name: "数据表格2"
-                }, {path: "/user/table3", component: "/views/table/teble3.html", name: "数据表格3"}, {
-                    path: "/user/form",
-                    component: "/views/form/index.html",
-                    name: "Form"
-                }, {path: "/docs/mockjs", component: "docs/mockjs.html", name: "拦截器(Mockjs)"}, {
-                    path: "/docs/menu",
-                    component: "docs/menu.html",
-                    name: "左侧菜单(Menu)"
-                }, {path: "/docs/route", component: "docs/route.html", name: "路由配置(Route)"}, {
-                    path: "/docs/tabs",
-                    component: "docs/tabs.html",
-                    name: "选项卡(Tabs)"
-                }, {path: "/docs/utils", component: "docs/utils.html", name: "工具包(Utils)"}, {
-                    path: "/views/select",
-                    component: "views/select/index.html",
-                    name: "Select"
-                }, {
-                    path: "/exception/403",
-                    component: "views/exception/403.html",
-                    name: "403"
-                }, {
-                    path: "/exception/404",
-                    component: "views/exception/404.html",
-                    name: "404"
-                }, {path: "/exception/500", component: "views/exception/500.html", name: "500"}]
-            };
+                    component: "views/cascader/index",
+                    name: "Cascader"}
+                , {path: "/", component: "xykwebadmin.php/app", name: "主页"}
+                , {path: "/xyk/app", component: "xykwebadmin.php/app", name: "主页"}
+                , {path: "/xyk/profile", component: "xykwebadmin.php/profile", name: "用户中心"}
+                , {path: "/xyk/grid", component: "xykwebadmin.php/grid", name: "Grid"}
+                , {path: "/xyk/button", component: "xykwebadmin.php/button", name: "按钮"}
+                , {path: "/xyk/form", component: "xykwebadmin.php/form", name: "表单"}
+                , {path: "/xyk/nav", component: "xykwebadmin.php/nav", name: "导航/面包屑"}
+                , {path: "/xyk/tab", component: "xykwebadmin.php/tab", name: "选项卡"}
+                , {path: "/xyk/progress", component: "xykwebadmin.php/progress", name: "progress"}
+                , {path: "/xyk/panel", component: "xykwebadmin.php/panel", name: "panel"}
+                , {path: "/xyk/badge", component: "xykwebadmin.php/badge", name: "badge"}
+                , {path: "/xyk/timeline", component: "xykwebadmin.php/timeline", name: "timeline"}
+                , {path: "/xyk/table_element", component: "xykwebadmin.php/table_element", name: "table-element"}
+                , {path: "/xyk/anim", component: "xykwebadmin.php/anim", name: "anim"}
+                , {path: "/xyk/auxiliar", component: "xykwebadmin.php/auxiliar", name: "anim"}
+                , {path: "/xyk/layer", component: "xykwebadmin.php/layer", name: "layer"}
+                , {path: "/xyk/laydate", component: "xykwebadmin.php/laydate", name: "laydate"}
+                , {path: "/xyk/table", component: "xykwebadmin.php/table", name: "table"}
+                , {path: "/xyk/laypage", component: "xykwebadmin.php/laypage", name: "laypage"}
+                , {path: "/xyk/upload", component: "xykwebadmin.php/upload", name: "upload"}
+                , {path: "/xyk/carousel", component: "xykwebadmin.php/carousel",}
+                , {path: "/xyk/laytpl", component: "xykwebadmin.php/laytpl", name: "laytpl"}
+                , {path: "/xyk/flow", component: "xykwebadmin.php/flow", name: "flow"}
+                , {path: "/xyk/util", component: "xykwebadmin.php/util", name: "util"}
+                , {path: "/xyk/code", component: "xykwebadmin.php/code", name: "code"}
+                , {path: "/xyk/select", component: "xykwebadmin.php/select", name: "code"}
+                , {path: "/xyk/403", component: "xykwebadmin.php/p403", name: "code"}
+                , {path: "/xyk/404", component: "xykwebadmin.php/p404", name: "code"}
+                , {path: "/xyk/500", component: "xykwebadmin.php/p500", name: "code"}
+                , {path: "/xyk/mockjs", component: "xykwebadmin.php/mockjs", name: "拦截器(Mockjs)"}
+                , { path: "/xyk/menu", component: "/xykwebadmin.php/menu", name: "左侧菜单(Menu)"}
+                , { path: "/xyk/addmenu", component: "xykwebadmin.php/addmenu", name: "add(Menu)"}
+                , { path: "/xyk/umenu", component: "xykwebadmin.php/umenu", name: "前台菜单(umenu)"}
+                , { path: "/xyk/addumenu", component: "xykwebadmin.php/addumenu", name: "add(Menu)"}
+                , { path: "/xyk/menu", component: "xykwebadmin.php/menu", name: "左侧菜单(Menu)"}
+                , {path: "/xyk/route", component: "xykwebadmin.php/route", name: "路由配置(Route)"}
+                , { path: "/xyk/tabs", component: "xykwebadmin.php/tabs", name: "选项卡(Tabs)"}
+                , {path: "/xyk/utils", component: "xykwebadmin.php/utils", name: "工具包(Utils)"}
+                , {path: "/xyk/us", component: "xykwebadmin.php/us", name: "关于我们(us)"}
+                , {path: "/xyk/news", component: "xykwebadmin.php/news", name: "news"}
+                , {path: "/xyk/addnews", component: "xykwebadmin.php/addnews", name: "addnews"}
+                , {path: "/xyk/article", component: "xykwebadmin.php/article", name: "article"}
+                , {path: "/xyk/addarticle", component: "xykwebadmin.php/addarticle", name: "addarticle"}
+                , {path: "/xyk/goods", component: "xykwebadmin.php/goods", name: "goods"}
+                , {path: "/xyk/addgoods", component: "xykwebadmin.php/addgoods", name: "addgoods"}
+                , {path: "/xyk/goodscate", component: "xykwebadmin.php/goodscate", name: "goodscate"}
+                , {path: "/xyk/addgoodscate", component: "xykwebadmin.php/addgoodscate", name: "addgoodscate"}
+                , {path: "/xyk/recruit", component: "xykwebadmin.php/recruit", name: "recruit"}
+                , {path: "/xyk/addrecruit", component: "xykwebadmin.php/addrecruit", name: "addrecruit"}
+                , {path: "/xyk/friendly", component: "xykwebadmin.php/friendly", name: "friendly"}
+                , {path: "/xyk/addfriendly", component: "xykwebadmin.php/addfriendly", name: "addfriendly"}
+                , {path: "/xyk/banner", component: "xykwebadmin.php/banner", name: "banner"}
+                , {path: "/xyk/addbanner", component: "xykwebadmin.php/addbanner", name: "addbanner"}
+                , {path: "/xyk/data_backups", component: "xykwebadmin.php/data_backups", name: "data_backups"}
+                , {path: "/xyk/fileManage", component: "xykwebadmin.php/fileManage", name: "fileManage"}
+                , {path: "/xyk/addfiles", component: "xykwebadmin.php/addfiles", name: "addfiles"}
+                , {path: "/xyk/webset", component: "xykwebadmin.php/webset", name: "webset"}
+                ]};
             return "TABS" === e.loadType && (a.onChanged = function () {
                 i.existsByPath(location.hash) ? i.switchByPath(location.hash) : t.addTab(location.hash, (new Date).getTime())
             }), n.setRoutes(a), this
@@ -182,7 +159,7 @@ layui.define(mods, function (e) {
             })
         }
     };
+
     (new p).ready(function () {
-        console.log("Init successed.")
     }), e("admin", {})
 });

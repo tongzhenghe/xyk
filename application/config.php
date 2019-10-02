@@ -15,9 +15,9 @@ return [
     // +----------------------------------------------------------------------
 
     // 应用调试模式
-    'app_debug'              => false,
+    'app_debug'              => true,
     // 应用Trace
-    'app_trace'              => false,
+    'app_trace'              => true,
     // 应用模式状态
     'app_status'             => '',
     // 是否支持多模块
@@ -233,6 +233,20 @@ return [
         // 是否使用 setcookie
         'setcookie' => true,
     ],
+
+
+    // 七牛云文件上传默认驱动
+    'UPLOAD_DRIVER' => 'Qiniu', //设置七牛上传驱动
+    //'UPLOAD_DRIVER' => 'Local',
+    // 七牛上传驱动配置说明
+    'Qiniu_CONFIG' => [
+        'secretKey' => 'dz1lzAKprz8rfwrTTRPCpgos_siqu0jwf0PoxlC9', //七牛服务器
+        'accessKey' => 'v-_-RaWsWOAusrmRIEbvaJx4wmiVwHMjfkXyhmxX', //七牛用户
+        'domain'    => 'http://icon.xinyikangyl.com/', //七牛域名
+        'bucket'    => 'xykhospitalspace', //空间名称
+        'timeout'   => 300, //超时时间
+    ],
+
 
     //分页配置
     'paginate'               => [
