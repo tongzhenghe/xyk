@@ -78,7 +78,7 @@ layui.define(mods, function (e) {
                     name: "Cascader"}
                 , {path: "/", component: "xykwebadmin.php/app", name: "主页"}
                 , {path: "/xyk/app", component: "xykwebadmin.php/app", name: "主页"}
-                , {path: "/xyk/profile", component: "/xykwebadmin.php/profile", name: "用户中心"}
+                , {path: "/xyk/profile", component: "xykwebadmin.php/profile", name: "用户中心"}
                 , {path: "/xyk/grid", component: "xykwebadmin.php/grid", name: "Grid"}
                 , {path: "/xyk/button", component: "xykwebadmin.php/button", name: "按钮"}
                 , {path: "/xyk/form", component: "xykwebadmin.php/form", name: "表单"}
@@ -107,7 +107,7 @@ layui.define(mods, function (e) {
                 , {path: "/xyk/500", component: "xykwebadmin.php/p500", name: "code"}
                 , {path: "/xyk/mockjs", component: "xykwebadmin.php/mockjs", name: "拦截器(Mockjs)"}
                 , { path: "/xyk/menu", component: "/xykwebadmin.php/menu", name: "左侧菜单(Menu)"}
-                , { path: "/xyk/addmenu", component: "http://webadmin.xinyikangyl.com/xykwebadmin.php/addmenu", name: "add(Menu)"}
+                , { path: "/xyk/addmenu", component: "xykwebadmin.php/addmenu", name: "add(Menu)"}
                 , { path: "/xyk/umenu", component: "xykwebadmin.php/umenu", name: "前台菜单(umenu)"}
                 , { path: "/xyk/addumenu", component: "xykwebadmin.php/addumenu", name: "add(Menu)"}
                 , { path: "/xyk/menu", component: "xykwebadmin.php/menu", name: "左侧菜单(Menu)"}
