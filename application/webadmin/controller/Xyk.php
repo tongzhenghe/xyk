@@ -28,6 +28,8 @@ class Xyk extends Common
     public  function addmenu()
     {
 
+        echo 343435335;exit;
+
         $param = request()->param();
         if (request()->isAjax()) {
             $menuModel = new Menu;
