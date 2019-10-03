@@ -107,7 +107,7 @@ layui.define(mods, function (e) {
                 , {path: "/xyk/500", component: "xykwebadmin.php/p500", name: "code"}
                 , {path: "/xyk/mockjs", component: "xykwebadmin.php/mockjs", name: "拦截器(Mockjs)"}
                 , { path: "/xyk/menu", component: "/xykwebadmin.php/menu", name: "左侧菜单(Menu)"}
-                , { path: "/xyk/addmenu", component: "/xykwebadmin.php/addmenu", name: "add(Menu)"}
+                , { path: "/xyk/addmenu", component: "http://webadmin.xinyikangyl.com/xykwebadmin.php/addmenu", name: "add(Menu)"}
                 , { path: "/xyk/umenu", component: "xykwebadmin.php/umenu", name: "前台菜单(umenu)"}
                 , { path: "/xyk/addumenu", component: "xykwebadmin.php/addumenu", name: "add(Menu)"}
                 , { path: "/xyk/menu", component: "xykwebadmin.php/menu", name: "左侧菜单(Menu)"}
