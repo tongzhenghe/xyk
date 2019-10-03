@@ -28,6 +28,8 @@ class Xyk extends Common
     public  function addmenu()
     {
 
+
+        echo 34343334333333;exit;
         $param = request()->param();
         if (request()->isAjax()) {
             $menuModel = new Menu;
@@ -139,7 +141,7 @@ class Xyk extends Common
                 exit(json_encode($arr));
             }
 
-            Upload::image($img);
+            Uplo::image($img);
 
         }
 
