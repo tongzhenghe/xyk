@@ -1,0 +1,66 @@
+<div class="layui-fluid">
+  <div class="layui-row">
+    <div class="layui-col-xs7">
+      <div class="layui-card">
+        <div class="layui-card-header">
+          <a href="#/juhui/recruit" title="返回"><i class="layui-icon">&#xe65c;</i>招聘新增</a>
+        </div>
+        <div class="layui-card-body">
+          <form class="layui-form" action="##" onsubmit="return false">
+            <div class="layui-form-item">
+              <label class="layui-form-label">顺序</label>
+              <div class="layui-input-block">
+                <input type="number" name="sort" value="{if !empty($dataOne.sort)}{$dataOne.sort}{/if}" lay-verify="required" autocomplete="off" class="layui-input">
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <label class="layui-form-label">招聘标题</label>
+              <div class="layui-input-block">
+                <input type="text" name="title" required lay-verify="required" {if !empty($dataOne.title)}value="{$dataOne.title}"{/if} placeholder="请输入名称" autocomplete="off" class="layui-input">
+              </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+              <label class="layui-form-label">简介</label>
+              <div class="layui-input-block">
+                <textarea name="intro" placeholder="选填" class="layui-textarea">{if !empty($dataOne.intro)}{$dataOne.intro}{/if}</textarea>
+              </div>
+            </div>
+            <!--手机详情-->
+            <div class="layui-form-item layui-form-text">
+              <label class="layui-form-label">手机端详情</label>
+              <div class="layui-input-block">
+                <textarea id="mobile" style="display: none;"> {if !empty($dataOne.pc_content)}{$dataOne.pc_content}{/if}</textarea>
+              </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+              <label class="layui-form-label">PC端详情</label>
+              <div class="layui-input-block">
+                <textarea id="pc" style="display: none;">{if !empty($dataOne.content)}{$dataOne.content}{/if}</textarea>
+              </div>
+            </div>
+
+
+            <div class="layui-form-item layui-form-text">
+              <label class="layui-form-label">关键词</label>
+              <div class="layui-input-block">
+                <textarea name="keywords" placeholder="炬晖农业" class="layui-textarea">{if !empty($dataOne.keywords)}{$dataOne.keywords}{else}炬晖农业{/if}</textarea>
+              </div>
+            </div>
+
+            <div class="layui-form-item">
+              <div class="layui-input-block">
+                <input type="hidden" name="u" value="Addrecruit">
+                <input type="hidden" name="id" value="{if !empty($dataOne.id)}{$dataOne.id}{/if}">
+                <button type="submit" class="layui-btn" lay-submit  lay-filter="toaddrecruit">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                <a href="#/juhui/recruit" class="layui-btn layui-btn-primary">返回列表</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{include file="./juhuiadmin/include/submit"/}

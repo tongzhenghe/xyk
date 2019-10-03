@@ -1,0 +1,54 @@
+<div class="layui-fluid">
+  <div class="layui-row">
+    <div class="layui-col-sm12">
+      <div class="layui-card">
+        <div class="layui-card-body">
+          <div class="layui-card-header">
+            <a href="#/juhui/addbanner" class="layui-btn layui-btn-xs">
+              <i class="layui-icon">&#xe654;</i>
+              <span>新增</span>
+            </a>
+            <a href="javascript:;" class="layui-btn layui-btn-xs layui-btn-primary" id="search_hash">
+              <i class="layui-icon">&#xe615;</i>
+            </a>
+          </div>
+          <div class="layui-card-body">
+            <table lay-filter="demo"  lay-data="{page:true}" >
+              <thead>
+              <tr>
+                <th lay-data="{field:'id', width:100, sort:true}">id</th>
+                <th lay-data="{field:'banner', width:150}">（主图）</th>
+                <th lay-data="{field:'title', width:400}">标题</th>
+                <th lay-data="{field:'url', width:100}">跳转链接</th>
+                <th lay-data="{field:'intro', width:600}">简介</th>
+                <th lay-data="{field:'status', width:100}">状态</th>
+                <th lay-data="{field:'操作', width:200}">操作</th>
+              </tr>
+              </thead>
+              <tbody>
+              {if !empty($banner)}
+              {foreach $banner as $vo}
+              <tr>
+                <td>{$vo.id}</td>
+                <td><img src="{$vo.banner}" width="50"></td>
+                <td>{$vo.title}</td>
+                <td>{$vo.url}</td>
+                <td>{$vo.intro}</td>
+                <td>{$vo.status}</td>
+                <td>
+                  <a href="#/juhui/details?id={$vo.id}" class="point">查看详情</a>
+                  <a href="#/juhui/addbanner?id={$vo.id}" class="point"><i class="layui-icon" title="编辑数据">&#xe642;</i></a>
+                  <a href="javascript:;" data-ids="112" data-url="{:url('index/banner')}" id="delMenu"><i  class="layui-icon" title="删除数据">&#xe640;</i></a>
+                </td>
+              </tr>
+              {/foreach}
+              {/if}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{include file="./juhuiadmin/include/layui_init"/}

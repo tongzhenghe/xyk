@@ -1,0 +1,46 @@
+<div class="layui-fluid">
+  <div class="layui-row">
+    <div class="layui-col-xs7">
+      <div class="layui-card">
+        <div class="layui-card-header">
+          <a href="#/juhui/fileManage" title="返回"><i class="layui-icon">&#xe65c;</i></a> 新增
+        </div>
+        <div class="layui-card-body">
+          <form class="layui-form" action="##" onsubmit="return false">
+            <div class="layui-form-item">
+              <label class="layui-form-label">标题</label>
+              <div class="layui-input-block">
+                <input type="text" name="title" required lay-verify="required" {if !empty($dataOne.title)}value="{$dataOne.title}"{/if} placeholder="请输入名称" autocomplete="off" class="layui-input">
+              </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+              <label class="layui-form-label">上传</label>
+              <div>
+                <div id="Mobile-icon">
+                  {if empty($dataOne.pic)}
+                  <div class="tips-1">
+                    <div  class="title-tips"><span><i>*</i>上传</span></div>
+                    <i class="layui-icon layui-icon-add-1"></i>
+                  </div>
+                  {/if}
+                  <div class="title-tips2" {if !empty($dataOne.pic)} style="display: block;" {/if}><span>重新上传</span>
+                </div>
+                <div class="Micon">{if !empty($dataOne.pic)}<img src="{$dataOne.pic}" width="100"/>{/if}</div>
+              </div>
+              </div>
+            <div class="layui-form-item">
+              <div class="layui-input-block">
+                <input type="hidden" name="u" value="Addfile">
+                <input type="hidden" name="id" value="{if !empty($dataOne.id)}{$dataOne.id}{/if}">
+                <button type="submit" class="layui-btn" lay-submit  lay-filter="addfiles">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                <a href="#/juhui/fileManage" class="layui-btn layui-btn-primary">返回列表</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{include file="./juhuiadmin/include/submit"/}

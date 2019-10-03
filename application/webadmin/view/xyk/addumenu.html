@@ -1,0 +1,80 @@
+<div class="layui-fluid">
+  <div class="layui-row">
+    <div class="layui-col-xs8">
+      <div class="layui-card">
+        <div class="layui-card-header">
+          <a href="#/xyk/umenu" title="返回"><i class="layui-icon">&#xe65c;</i>前台菜单新增</a>
+        </div>
+        <div class="layui-card-body">
+          <form class="layui-form" action="##" onsubmit="return false">
+            <div class="layui-form-item">
+              <label class="layui-form-label">顺序</label>
+              <div class="layui-input-block">
+                <input type="number" name="sort" {if !empty($dataOne.sort)}value="{$dataOne.sort}"{/if} lay-verify="required" autocomplete="off" class="layui-input">
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <label class="layui-form-label">名称</label>
+              <div class="layui-input-block">
+                <input type="text" name="title" required lay-verify="required" {if !empty($dataOne.title)}value="{$dataOne.title}"{/if} placeholder="请输入名称" autocomplete="off" class="layui-input">
+              </div>
+            </div>
+              <div class="layui-form-item">
+              <label class="layui-form-label">跳转链接</label>
+              <div class="layui-input-block">
+                <input type="text" name="url" required lay-verify="required" {if !empty($dataOne.url)}value="{$dataOne.url}"{/if} autocomplete="off" class="layui-input">
+              </div>
+            </div>
+
+            <div class="layui-form-item">
+              <label class="layui-form-label">属于分类</label>
+              <div class="layui-input-block">
+                <select name="pid" lay-verify="required">
+                  <option value="0">顶级</option>
+                  {if !empty($umenu)}
+                  {foreach $umenu as $vo}
+                  <option  value="{$vo.id}" {if $dataOne.pid == $vo.id}selected{/if}><span style="color: #939393;">{$vo.html}</span>{$vo.title}</option>
+                  {/foreach}
+                  {/if}
+                </select>
+              </div>
+            </div>
+
+
+            <div class="layui-form-item layui-form-text">
+              <label class="layui-form-label">上传图标</label>
+              <div>
+                <div id="Mobile-icon">
+                  {if empty($dataOne.icon)}
+                  <div class="tips-1">
+                    <div  class="title-tips"><span><i>*</i>上传图标</span></div>
+                    <i class="layui-icon layui-icon-add-1"></i>
+                  </div>
+                  {/if}
+                  <div class="title-tips2" {if !empty($dataOne.icon)} style="display: block;" {/if}><span>重新上传</span>
+                </div>
+                <div class="Micon">{if !empty($dataOne.icon)}<img src="{$dataOne.icon}" width="100"/>{/if}</div>
+              </div>
+            </div>
+              <div class="layui-form-item">
+                  <label class="layui-form-label">所属平台</label>
+                  <div class="layui-input-block">
+                      <input type="radio" name="is_m" value="1" {if $dataOne.is_m == 1}checked{/if} title="手机">
+                      <input type="radio" name="is_m" value="2" {if $dataOne.is_m == 2}checked{/if} title="pc">
+                  </div>
+              </div>
+            <div class="layui-form-item">
+              <div class="layui-input-block">
+                <input type="hidden" name="id" value="{$dataOne.id}">
+                <button type="submit" class="layui-btn" lay-submit  lay-filter="toumenu">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                <a href="#/xyk/umenu" class="layui-btn layui-btn-primary">返回列表</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{include file="./xyk/include/submit"/}

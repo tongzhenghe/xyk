@@ -1,0 +1,26 @@
+<div class="layui-side" kit-side="true">
+    <div class="layui-side-scroll">
+        <div id="menu-box">
+            <ul class="kit-menu">
+                <li class="kit-menu-item">
+                    {foreach $menu as $vo}
+                    <a href="{$vo.url}">
+                        <i class="layui-icon"></i>
+                        <span>{$vo.title}</span>
+                    </a>
+                    <ul class="kit-menu-child layui-anim layui-anim-upbit">
+                        {foreach $vo.children as $vc}
+                        <li class="kit-menu-item">
+                            <a href="#/xyk/{$vc.url}">
+                                <i class="layui-icon"></i>
+                                <span>{$vc.title}</span>
+                            </a>
+                        </li>
+                        {/foreach}
+                    </ul>
+                    {/foreach}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

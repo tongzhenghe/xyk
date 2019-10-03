@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>炬晖后台</title>
+    {css href='/static/juhuiadmin/layui/css/layui.css'}
+    {css href='/static/juhuiadmin/css/sign.css'}
+</head>
+<body>
+<div id="container">
+    <div></div>
+    <div class="admin-login-background">
+        <form class="layui-form" action="##" onsubmit="return false">
+            <div>
+                <i class="layui-icon layui-icon-username admin-icon admin-icon-username"></i>
+                <input type="text" name="username" value="juhuiadmininatar" placeholder="请输入用户名"
+                       autocomplete="off"
+                       class="layui-input admin-input admin-input-username">
+            </div>
+            <div>
+                <i class="layui-icon layui-icon-password admin-icon admin-icon-password"></i>
+                <input type="password" name="password"
+                       placeholder="请输入密码"
+                       autocomplete="off"
+                       class="layui-input admin-input">
+            </div>
+            <div>
+                <input type="text" name="verify"
+                       placeholder="请输入验证码"
+                       autocomplete="off"
+                       class="layui-input admin-input admin-input-verify">
+                <img class="admin-captcha" src=""
+                     onclick="updateVerify()">
+            </div>
+            <button type="submit" class="layui-btn admin-button tosignin">登&nbsp;入</button>
+        </form>
+        <div style="text-align:center;padding:18px;color: #909090;"> Copyright © 酒泉华美医疗美容医院</div>
+    </div>
+</div>
+{js href='/static/juhuiadmin/layui/layui.js'}
+{js href='/static/juhuiadmin/js/jquery-3.4.1.min.js'}
+<script>
+    $('.tosignin').on('click', function () {
+        $.ajax({
+            type:'POST',
+            url: "/admin.php/signin",
+            data: {username: $("input[name='username']").val(), password: $("input[name='password']").val()},
+            dataType: "json",
+            success: function(data) {
+                if ( data.status )  {
+                    window.location.href = (data.url);
+                }
+               alert(data.msg);
+            },
+        });
+    });
+</script>
+</body>
+</html>
+
+
+

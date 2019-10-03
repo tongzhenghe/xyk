@@ -1,0 +1,78 @@
+<script>
+
+    layui.config({
+
+        base: ''
+
+    }).use(['jquery', 'mockjs', 'table', 'sidebar', 'form'], function () {
+
+        //var $ = layui.jquery,
+
+        // sidebar = layui.sidebar,
+
+        // form = layui.form;
+
+        var table = layui.table
+        ,form = layui.form;
+
+        //转换静态表格
+
+        table.init('demo', {
+
+            // size: 'sm'
+
+            // ,height: 500 //设置高度
+
+            limit: 90 //注意：请务必确保 limit 参数（默认：10）是与你服务端限定的数据条数一致
+
+            //支持所有基础参数
+
+        });
+
+    });
+
+
+    layui.jquery(".layui-tab-title li").click(function(){
+
+        var picTabNum = layui.jquery(this).index();
+
+        // console.log("当前图片标题下标是："+picTabNum);
+
+        sessionStorage.setItem("picTabNum",picTabNum);
+
+    });
+
+
+    layui.jquery(function(){
+
+        var getPicTabNum = sessionStorage.getItem("picTabNum");
+
+        layui.jquery(".layui-tab-title li").eq(getPicTabNum).addClass("layui-this").siblings().removeClass("layui-this");
+
+        layui.jquery(".layui-tab-content>div").eq(getPicTabNum).addClass("layui-show").siblings().removeClass("layui-show");
+
+    });
+
+    function previewImg(obj) {
+        var img = new Image();
+        img.src = obj.src;
+        var height = img.height + 50; //获取图片高度
+        var width = img.width; //获取图片宽度
+        var imgHtml = "<img src='" + obj.src + "' />";
+        //弹出层
+        layer.open({
+            type: 1,
+            shade: 0.8,
+            offset: 'auto',
+            area: [width + 'px',height+'px'],
+            shadeClose:true,//点击外围关闭弹窗
+            scrollbar: false,//不现实滚动条
+            title: "图片预览", //不显示标题
+            content: imgHtml, //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+            cancel: function () {
+                //layer.msg('捕获就是从页面已经存在的元素上，包裹layer的结构', { time: 5000, icon: 6 });
+            }
+        });
+    }
+
+</script>

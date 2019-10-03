@@ -1,0 +1,118 @@
+<div class="layui-fluid">
+  <div class="layui-row">
+    <div class="layui-col-xs8">
+      <div class="layui-card">
+        <div class="layui-card-body">
+            <form class="layui-form" action="##" onsubmit="return false">
+            <div class="layui-form-item">
+              <label class="layui-form-label">联系人姓名</label>
+              <div class="layui-input-block">
+                  <input type="text" name="people" {if !empty($dataOne.people)}value="{$dataOne.people}"{/if} lay-verify="required" autocomplete="off" class="layui-input">
+              </div>
+            </div>
+
+            <div class="layui-form-item">
+              <label class="layui-form-label">联系人电话</label>
+              <div class="layui-input-block">
+                <input type="text" name="people_tel" {if !empty($dataOne.people_tel)}value="{$dataOne.people_tel}"{/if} lay-verify="required" autocomplete="off" class="layui-input">
+              </div>
+            </div>
+
+             <div class="layui-form-item">
+              <label class="layui-form-label">名称</label>
+              <div class="layui-input-block">
+                <input type="text" name="title" {if !empty($dataOne.title)}value="{$dataOne.title}"{/if} lay-verify="required" autocomplete="off" class="layui-input">
+              </div>
+            </div>
+             <div class="layui-form-item">
+              <label class="layui-form-label">关键词</label>
+              <div class="layui-input-block">
+                <input type="text" name="keywords" {if !empty($dataOne.keywords)}value="{$dataOne.keywords}"{/if} lay-verify="required" autocomplete="off" class="layui-input">
+              </div>
+            </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">公司简介</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="intro" {if !empty($dataOne.intro)}value="{$dataOne.intro}"{/if} lay-verify="required" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <!--wcode-->
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">二维码</label>
+                    <div class="layui-input-block">
+                        <div class="base-upload-1">
+                            {if empty($dataOne.wcode)}
+                            <div class="tips-1-1">
+                                <div  class="title-tips"><span><i>*</i>上传二维码</span></div>
+                                <i class="layui-icon layui-icon-add-1"></i>
+                            </div>
+                            {/if}
+                            <div class="title-tips2-1" {if !empty($dataOne.wcode)} style="display: block;" {/if}><span>重新上传</span>
+                        </div>
+                        <div class="Baseicon-1">{if !empty($dataOne.wcode)}<img src="{$dataOne.wcode}" width="100"/>{/if}</div>
+                    </div>
+                </div>
+
+                <!--logo-->
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">LOGO</label>
+                    <div class="layui-input-block">
+                        <div class="base-upload">
+                            {if empty($dataOne.logo)}
+                            <div class="tips-1">
+                                <div  class="title-tips"><span><i>*</i>上传LOGO</span></div>
+                                <i class="layui-icon layui-icon-add-1"></i>
+                            </div>
+                            {/if}
+                            <div class="title-tips2" {if !empty($dataOne.logo)} style="display: block;" {/if}><span>重新上传</span>
+                        </div>
+                        <div class="Baseicon">{if !empty($dataOne.logo)}<img src="{$dataOne.logo}" width="100"/>{/if}</div>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">联系邮箱</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="email" {if !empty($dataOne.email)}value="{$dataOne.email}"{/if} lay-verify="required" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <!--详情-->
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">手机端关于我们</label>
+                    <div class="layui-input-block">
+                        <textarea id="mobile" style="display: none;"> {if !empty($dataOne.content)}{$dataOne.content}{/if}</textarea>
+                    </div>
+                </div>
+
+                 <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">关于我们</label>
+                    <div class="layui-input-block">
+                        <textarea id="pc" style="display: none;"> {if !empty($dataOne.pc_content)}{$dataOne.pc_content}{/if}</textarea>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">公司地址</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="address" {if !empty($dataOne.address)}value="{$dataOne.address}"{/if} lay-verify="required" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+            <div class="layui-form-item">
+              <div class="layui-input-block">
+                  <input type="hidden" name="u" value="Us">
+                  <input type="hidden" name="id" value="{if !empty($dataOne.id)}{$dataOne.id}{/if}">
+                <button class="layui-btn" lay-submit="" lay-filter="tous">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{include file="./juhuiadmin/include/submit"/}
