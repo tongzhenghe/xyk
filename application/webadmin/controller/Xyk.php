@@ -28,6 +28,7 @@ class Xyk extends Common
     public  function addmenu()
     {
         $param = request()->param();
+        wl_debug($param);
         if (request()->isAjax()) {
             $menuModel = new Menu;
             $data = [
@@ -66,7 +67,6 @@ class Xyk extends Common
     public  function addumenu()
     {
         $param = request()->param();
-        wl_debug($param);
         if (request()->isAjax()) {
             $umenuModel = new Umenu;
 
