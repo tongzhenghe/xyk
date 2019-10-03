@@ -120,6 +120,7 @@ class Xyk extends Common
     public  function util(){ return view();}
     public  function code(){ return view();}
     public  function select(){ return view();}
+    public  function profile(){ return view();}
 
 
     public  function  cdnUploads()
