@@ -8,12 +8,10 @@
 
 namespace app\webadmin\controller;
 
-use app\extra\Upload;
+use app\webadmin\model\Common as CommonModel;
 use app\webadmin\model\Menu;
 use app\webadmin\model\Umenu;
-use Qiniu\Storage\UploadManager;
 use think\Db;
-use app\webadmin\model\Common as CommonModel;
 
 class Xyk extends Common
 {
